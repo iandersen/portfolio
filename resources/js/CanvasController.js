@@ -7,7 +7,7 @@ class CanvasController{
 
         this.starSpeed = 2;
         this.stars = [];
-        this.numStars = 1000;
+        this.numStars = 2001;
         this.mouseX = 0;
         this.mouseY = 0;
 

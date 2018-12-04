@@ -81,7 +81,7 @@ class Star {
         canvas.beginPath();
         canvas.moveTo(this.lastX, this.lastY);
         canvas.lineTo(this.x, this.y);
-        canvas.lineWidth = 15;
+        canvas.lineWidth = 1;
         canvas.stroke();
     }
 }
