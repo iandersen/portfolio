@@ -8,7 +8,58 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+//FontAwesome
+@import '~@fortawesome/fontawesome-free/scss/brands';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.emphasis-light{
+  color: lighten(#FFE66D, 20%);
+}
+
+#jumbotron{
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  #jumbotronCanvas{
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: -1;
+  }
+  #centerContent{
+    transform: translateY(-25%);
+    margin-top: 40vh;
+    pointer-events: none;
+    padding: 25px;
+    width: 100%;
+    position: absolute;
+    h1{
+      font-size: 4em;
+    }
+    h2{
+      font-size: 2.5em;
+    }
+  }
+
+  #scrollDown{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 2em;
+    #scrollDownCaret{
+      font-size: 4em;
+    }
+    a{
+      color: white;
+      transition: 300ms;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #4ECDC4;
+    }
+  }
 }
