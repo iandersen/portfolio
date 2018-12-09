@@ -1,6 +1,3 @@
-/**
- * Created by Ian on 1/31/2017.
- */
-import CanvasController from './CanvasController';
+import PlaygroundController from './PlaygroundController';
 
-document.addEventListener('load', new CanvasController());
+document.addEventListener('load', new PlaygroundController(document.getElementById('jumbotronCanvas')));

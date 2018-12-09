@@ -15824,6 +15824,50 @@ readers do not read off random characters that represent icons */
   clear: both;
 }
 
+#skillsCanvasContainer {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+}
+
+#skillsCanvasContainer #skillsCanvas {
+  height: 600px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: inline-block;
+}
+
+#skillsListContainer {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#skillsListContainer .skillCategory {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+#skillsListContainer .skillCategory .skillsSubTitle {
+  color: #FF6B6B;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+#skillsListContainer .skillCategory .skillsList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#skillsListContainer .skillCategory .skillsList li {
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #1A535C;
+}
+
 #jumbotron {
   height: 100%;
   width: 100%;
@@ -15936,5 +15980,76 @@ readers do not read off random characters that represent icons */
   padding: 20px;
   font-size: 1.35em;
   display: inline-block;
+}
+
+#portfolio {
+  background-color: #1A535C;
+  color: #F7FFF7;
+  width: 100%;
+  margin: 0;
+}
+
+#portfolio .sectionTitle {
+  width: 100%;
+}
+
+#portfolio .portfolioItem {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+#portfolio .portfolioItem .featuredImage {
+  width: 100%;
+}
+
+#experienceList {
+  list-style: none;
+  border-collapse: collapse;
+  padding: 0;
+}
+
+#experienceList .experienceItem {
+  margin: 15px;
+}
+
+#experienceList .title,
+#experienceList .duration,
+#experienceList .expand {
+  border: 2px solid #F7FFF7;
+  font-size: 1.5em;
+  font-family: Nunito, sans-serif;
+  padding: 5px;
+  display: inline-block;
+}
+
+#experienceList .title {
+  background: #F7FFF7;
+  color: #1A535C;
+}
+
+#experienceList .expand {
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  border: 2px solid #FFE66D;
+  background: #FFE66D;
+  text-decoration: none;
+  text-align: center;
+  color: #FF6B6B;
+  font-weight: bold;
+}
+
+#experienceList .expand:hover {
+  background: #e3c73c;
+  border: 2px solid #e3c73c;
+}
+
+#experienceList .description {
+  padding: 25px;
+  font-size: 1.35em;
+  display: none;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 

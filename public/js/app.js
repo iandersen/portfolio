@@ -1902,7 +1902,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(164)("./" + name);
+                __webpack_require__(167)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -4888,110 +4888,6 @@ module.exports = {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(145);
-
-var DEFAULT_CONTENT_TYPE = {
-  'Content-Type': 'application/x-www-form-urlencoded'
-};
-
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
-
-function getDefaultAdapter() {
-  var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(9);
-  } else if (typeof process !== 'undefined') {
-    // For node use HTTP adapter
-    adapter = __webpack_require__(9);
-  }
-  return adapter;
-}
-
-var defaults = {
-  adapter: getDefaultAdapter(),
-
-  transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName(headers, 'Content-Type');
-    if (utils.isFormData(data) ||
-      utils.isArrayBuffer(data) ||
-      utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
-    ) {
-      return data;
-    }
-    if (utils.isArrayBufferView(data)) {
-      return data.buffer;
-    }
-    if (utils.isURLSearchParams(data)) {
-      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
-      return data.toString();
-    }
-    if (utils.isObject(data)) {
-      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
-      return JSON.stringify(data);
-    }
-    return data;
-  }],
-
-  transformResponse: [function transformResponse(data) {
-    /*eslint no-param-reassign:0*/
-    if (typeof data === 'string') {
-      try {
-        data = JSON.parse(data);
-      } catch (e) { /* Ignore */ }
-    }
-    return data;
-  }],
-
-  /**
-   * A timeout in milliseconds to abort a request. If set to 0 (default) a
-   * timeout is not created.
-   */
-  timeout: 0,
-
-  xsrfCookieName: 'XSRF-TOKEN',
-  xsrfHeaderName: 'X-XSRF-TOKEN',
-
-  maxContentLength: -1,
-
-  validateStatus: function validateStatus(status) {
-    return status >= 200 && status < 300;
-  }
-};
-
-defaults.headers = {
-  common: {
-    'Accept': 'application/json, text/plain, */*'
-  }
-};
-
-utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
-  defaults.headers[method] = {};
-});
-
-utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
-});
-
-module.exports = defaults;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(144)))
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -22104,6 +22000,110 @@ module.exports = defaults;
 }.call(this));
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)(module)))
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var utils = __webpack_require__(1);
+var normalizeHeaderName = __webpack_require__(145);
+
+var DEFAULT_CONTENT_TYPE = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+};
+
+function setContentTypeIfUnset(headers, value) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+    headers['Content-Type'] = value;
+  }
+}
+
+function getDefaultAdapter() {
+  var adapter;
+  if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(9);
+  } else if (typeof process !== 'undefined') {
+    // For node use HTTP adapter
+    adapter = __webpack_require__(9);
+  }
+  return adapter;
+}
+
+var defaults = {
+  adapter: getDefaultAdapter(),
+
+  transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
+    ) {
+      return data;
+    }
+    if (utils.isArrayBufferView(data)) {
+      return data.buffer;
+    }
+    if (utils.isURLSearchParams(data)) {
+      setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
+      return data.toString();
+    }
+    if (utils.isObject(data)) {
+      setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
+      return JSON.stringify(data);
+    }
+    return data;
+  }],
+
+  transformResponse: [function transformResponse(data) {
+    /*eslint no-param-reassign:0*/
+    if (typeof data === 'string') {
+      try {
+        data = JSON.parse(data);
+      } catch (e) { /* Ignore */ }
+    }
+    return data;
+  }],
+
+  /**
+   * A timeout in milliseconds to abort a request. If set to 0 (default) a
+   * timeout is not created.
+   */
+  timeout: 0,
+
+  xsrfCookieName: 'XSRF-TOKEN',
+  xsrfHeaderName: 'X-XSRF-TOKEN',
+
+  maxContentLength: -1,
+
+  validateStatus: function validateStatus(status) {
+    return status >= 200 && status < 300;
+  }
+};
+
+defaults.headers = {
+  common: {
+    'Accept': 'application/json, text/plain, */*'
+  }
+};
+
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+  defaults.headers[method] = {};
+});
+
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
+});
+
+module.exports = defaults;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(144)))
 
 /***/ }),
 /* 4 */
@@ -47230,7 +47230,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(137);
-module.exports = __webpack_require__(165);
+module.exports = __webpack_require__(168);
 
 
 /***/ }),
@@ -47247,13 +47247,14 @@ module.exports = __webpack_require__(165);
 __webpack_require__(138);
 __webpack_require__(160);
 __webpack_require__(163);
+__webpack_require__(166);
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-window._ = __webpack_require__(3);
+window._ = __webpack_require__(2);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -51275,7 +51276,7 @@ module.exports = __webpack_require__(141);
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(8);
 var Axios = __webpack_require__(143);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 
 /**
  * Create an instance of Axios
@@ -51358,7 +51359,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(153);
 var dispatchRequest = __webpack_require__(154);
@@ -52087,7 +52088,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(155);
 var isCancel = __webpack_require__(11);
-var defaults = __webpack_require__(2);
+var defaults = __webpack_require__(3);
 var isAbsoluteURL = __webpack_require__(156);
 var combineURLs = __webpack_require__(157);
 
@@ -52343,13 +52344,10 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__CanvasController__ = __webpack_require__(161);
-/**
- * Created by Ian on 1/31/2017.
- */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__PlaygroundController__ = __webpack_require__(161);
 
 
-document.addEventListener('load', new __WEBPACK_IMPORTED_MODULE_0__CanvasController__["a" /* default */]());
+document.addEventListener('load', new __WEBPACK_IMPORTED_MODULE_0__PlaygroundController__["a" /* default */](document.getElementById('jumbotronCanvas')));
 
 /***/ }),
 /* 161 */
@@ -52363,9 +52361,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 
 
-var CanvasController = function () {
-    function CanvasController() {
-        _classCallCheck(this, CanvasController);
+var PlaygroundController = function () {
+    function PlaygroundController(element) {
+        _classCallCheck(this, PlaygroundController);
 
         this.width = 0;
         this.height = 0;
@@ -52382,7 +52380,7 @@ var CanvasController = function () {
         this.mode = 0;
         this.modes = 7;
 
-        this.c = document.getElementById('jumbotronCanvas');
+        this.c = element;
         var self = this;
         if (this.c != null) {
             this.updateSize();
@@ -52410,7 +52408,7 @@ var CanvasController = function () {
         }
     }
 
-    _createClass(CanvasController, [{
+    _createClass(PlaygroundController, [{
         key: 'update',
         value: function update() {
             this.updateSize();
@@ -52450,17 +52448,17 @@ var CanvasController = function () {
         }
     }]);
 
-    return CanvasController;
+    return PlaygroundController;
 }();
 
-/* harmony default export */ __webpack_exports__["a"] = (CanvasController);
+/* harmony default export */ __webpack_exports__["a"] = (PlaygroundController);
 
 /***/ }),
 /* 162 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52572,6 +52570,177 @@ var Star = function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SkillsCanvasController__ = __webpack_require__(164);
+
+
+document.addEventListener('load', new __WEBPACK_IMPORTED_MODULE_0__SkillsCanvasController__["a" /* default */](document.getElementById('skillsCanvas')));
+
+/***/ }),
+/* 164 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Skill__ = __webpack_require__(165);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var SkillsCanvasController = function () {
+    function SkillsCanvasController(element) {
+        _classCallCheck(this, SkillsCanvasController);
+
+        this.width = 0;
+        this.height = 0;
+
+        this.skillMovement = 1000;
+        this.skills = [new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('Java'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('PHP'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('MySQL'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('Javascript'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('ReactJS'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('Laravel'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('NodeJS'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('HTML5'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('CSS3'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('Git Flow'), new __WEBPACK_IMPORTED_MODULE_0__Skill__["a" /* default */]('My Skills ->', true)];
+        this.mouseX = 0;
+        this.mouseY = 0;
+
+        this.FPS = 60;
+
+        this.c = element;
+        var self = this;
+        if (this.c != null) {
+            this.updateSize();
+            this.mouseX = this.width / 2;
+            this.mouseY = this.height / 2;
+            $(window).scroll(function () {
+                var doc = document.documentElement;
+                var rect = self.c.getBoundingClientRect();
+                self.mouseX = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0) - rect.left;
+                self.mouseY = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0) - $(self.c).offset().top;
+            });
+            this.ctx = this.c.getContext('2d');
+            setInterval(function () {
+                self.update();
+                self.draw();
+            }, 1000 / this.FPS);
+        }
+    }
+
+    _createClass(SkillsCanvasController, [{
+        key: 'update',
+        value: function update() {
+            var _this = this;
+
+            this.updateSize();
+            this.skills.forEach(function (skill) {
+                skill.updatePosition(_this.mouseX, _this.mouseY, _this.width, _this.height, _this.skillMovement);
+            });
+        }
+    }, {
+        key: 'draw',
+        value: function draw() {
+            var _this2 = this;
+
+            this.ctx.clearRect(0, 0, this.width, this.height);
+            this.skills.forEach(function (skill) {
+                skill.draw(_this2.ctx);
+            });
+        }
+    }, {
+        key: 'updateSize',
+        value: function updateSize() {
+            this.c.width = this.c.clientWidth;
+            this.c.height = this.c.parentNode.clientHeight;
+            this.width = this.c.width;
+            this.height = this.c.height;
+        }
+    }]);
+
+    return SkillsCanvasController;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (SkillsCanvasController);
+
+/***/ }),
+/* 165 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var skillOrder = 0;
+
+var Skill = function () {
+    function Skill(text, isTitle) {
+        _classCallCheck(this, Skill);
+
+        this.order = skillOrder++;
+        this.isTitle = !!isTitle;
+        this.text = text;
+        this.color = Skill.getRandomHexColor();
+        this.x = 0;
+        this.y = 0;
+    }
+
+    _createClass(Skill, [{
+        key: 'updatePosition',
+        value: function updatePosition(mouseX, mouseY, width, height, maxDistance) {
+            var columnWidth = width;
+            var columnHeight = 50;
+            var marginY = -100;
+            var columnsPerRow = Math.floor(width / columnWidth);
+            var column = this.order % columnsPerRow;
+            var row = Math.floor(this.order / columnsPerRow);
+            var marginX = (width - columnsPerRow * columnWidth) / 2;
+            var x = marginX + column * columnWidth + columnWidth / 2;
+            var y = marginY + row * columnHeight + columnHeight / 2;
+            if (this.isTitle) y = marginY + columnHeight * 2;
+            // const diffX = (maxDistance/15) * Skill.sign(mouseX-x) * (Math.pow(mouseX-x,2) / Math.pow(width, 2));
+            var diffX = 0;
+            var diffY = maxDistance * Skill.sign(mouseY - y) * (Math.pow(mouseY - y, 2) / Math.pow(height, 2));
+            if (this.isTitle) x -= width;
+            this.x = x - diffX;
+            this.y = y - diffY;
+        }
+    }, {
+        key: 'draw',
+        value: function draw(context) {
+            context.fillStyle = this.color;
+            context.strokeStyle = this.color;
+            context.font = '3em Arial';
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.fillText(this.text, this.x, this.y);
+        }
+    }], [{
+        key: 'getRandomHexColor',
+        value: function getRandomHexColor() {
+            var colors = ['1A535C', '4ECDC4', 'FF6B6B'];
+            return '#' + __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.sample(colors);
+        }
+    }, {
+        key: 'sign',
+        value: function sign(x) {
+            if (+x === x) {
+                // check if a number was given
+                return x === 0 ? x : x > 0 ? 1 : -1;
+            }
+            return NaN;
+        }
+    }]);
+
+    return Skill;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Skill);
+
+/***/ }),
+/* 166 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
 
@@ -52601,8 +52770,16 @@ $(document).ready(function () {
     init();
 });
 
+$('.expand').on('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var $clickedElement = $(event.target);
+    $clickedElement.text($clickedElement.text() === '+' ? '-' : '+');
+    $clickedElement.next().toggle();
+});
+
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -52867,10 +53044,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 164;
+webpackContext.id = 167;
 
 /***/ }),
-/* 165 */
+/* 168 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

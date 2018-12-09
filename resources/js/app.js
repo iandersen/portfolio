@@ -7,4 +7,5 @@
 
 require('./bootstrap');
 require('./jumbotronCanvas');
+require('./skillsCanvas');
 require('./experience');

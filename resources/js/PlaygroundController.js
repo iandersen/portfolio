@@ -1,7 +1,7 @@
 import Star from './Star';
 
-class CanvasController{
-    constructor(){
+class PlaygroundController{
+    constructor(element){
         this.width = 0;
         this.height = 0;
 
@@ -17,7 +17,7 @@ class CanvasController{
         this.mode = 0;
         this.modes = 7;
 
-        this.c = document.getElementById('jumbotronCanvas');
+        this.c = element;
         const self = this;
         if (this.c != null) {
             this.updateSize();
@@ -81,4 +81,4 @@ class CanvasController{
     }
 }
 
-export default CanvasController;
+export default PlaygroundController;

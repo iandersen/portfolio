@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>Ian Andersen</title>
         <meta charset="utf-8"/>
@@ -47,44 +47,110 @@
         <h3>Experience</h3>
         <ul id="experienceList">
             <li class="experienceItem">
-                <h4 class="title">Junior Full Stack Web Developer at Finalweb</h4>
-                <span class="start">August 2016</span>
-                <span class="end">Current</span>
-                <p class="description">Used Laravel and ReactJS, along with various other technologies to create a powerful
+                <span class="title col-md-4">Junior Full Stack Web Developer at Finalweb</span><span class="duration col-md-4"><span class="start">August 2016</span><span class="end">Current</span></span><a class="expand col-md-1" href="#">+</a>
+                <p class="description">At Finalweb we used Laravel and ReactJS, along with various other technologies to create a powerful
                     WYSIWYG CMS designed primarily for churches. I began with no experience with these technologies, but
-                    after a a short time I was able to contribute in bug fixing, adding new features, and even customer
-                    support. Now I can comfortably interact with and improve all aspects of our core application.</p>
+                    after a short time I was able to contribute in bug fixing, adding new features, and even customer
+                    support. Now I can comfortably interact with and improve all aspects of our flagship application.</p>
             </li>
             <li class="experienceItem">
-                <h4 class="title">TA at The Master's University</h4>
-                <span class="start">August 2017</span>
-                <span class="end">June 2018</span>
+                <span class="title col-md-4">TA at The Master's University</span><span class="duration col-md-4"><span class="start">August 2017</span><span class="end">June 2018</span></span><a class="expand col-md-1" href="#">+</a>
                 <p class="description">I graded assignments and communicated with students in various computer science
                     classes, including Data Structures, Web Design, and Intro to Unix and Linux.</p>
             </li>
             <li class="experienceItem">
-                <h4 class="title">Bachelor's Degree from The Master's University</h4>
-                <span class="start">August 2016</span>
-                <span class="end">May 2019</span>
+                <span class="title col-md-4">Bachelor's Degree from The Master's University</span><span class="duration col-md-4"><span class="start">August 2016</span><span class="end">May 2019</span></span><a class="expand col-md-1" href="#">+</a>
                 <p class="description">I finished university in three years with a double emphasis in Computer Science
                 and Information Systems. I was awarded the President's Scholarship for academic excellence and kept the
                 scholarship throughout my time at the school.</p>
             </li>
             <li class="experienceItem">
-                <h4 class="title">Computer Science Club at The Master's University</h4>
-                <span class="start">August 2017</span>
-                <span class="end">May 2019</span>
+                <span class="title col-md-4">Computer Science Club at The Master's University</span><span class="duration col-md-4"><span class="start">August 2017</span><span class="end">May 2019</span></span><a class="expand col-md-1" href="#">+</a>
                 <p class="description">I attended the club in my first year of university, was elected Events Coordinator
                 in my second year, and elected president in my third year. I interacted with industry professionals,
                 arranged meetings, competed in two ACM competitions, and planned events.</p>
             </li>
         </ul>
     </section>
-    <section id="skills" class="pageSection col-md-12">
+    <section id="skills" class="pageSection col-md-12 clearfix">
         <h2 class="sectionTitle">Skills</h2>
+        <div id="skillsListContainer" class="col-md-6">
+            <div class="col-md-3 skillCategory">
+                <h3 class="skillsSubTitle">
+                    Server Side
+                </h3>
+                <ul class="skillsList">
+                    <li>Java</li>
+                    <li>PHP</li>
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                </ul>
+            </div>
+            <div class="col-md-3 skillCategory">
+                <h3 class="skillsSubTitle">
+                    Front-End
+                </h3>
+                <ul class="skillsList">
+                    <li>Javascript</li>
+                    <li>ReactJS</li>
+                    <li>BackboneJS</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+            <div class="col-md-3 skillCategory">
+                <h3 class="skillsSubTitle">
+                    Workplace
+                </h3>
+                <ul class="skillsList">
+                    <li>Agile Programming</li>
+                    <li>JIRA</li>
+                    <li>Git Flow</li>
+                    <li>Interacting Directly with Clients</li>
+                </ul>
+            </div>
+        </div>
+        <div id="skillsCanvasContainer" class="col-md-4">
+            <canvas id="skillsCanvas"></canvas>
+        </div>
     </section>
-    <section id="portfolio" class="pageSection col-md-12">
+    <section id="portfolio" class="pageSection row">
         <h2 class="sectionTitle">Portfolio</h2>
+        <div class="portfolioItem col-md-4">
+            <h3 class="title">
+                HTML High 5
+            </h3>
+            <img src="/images/htmlhigh5.jpg" alt="HTML High 5" class="featuredImage">
+            <p class="description">Lorem Ipsum Dolor Sit Amet</p>
+            <a class="btn btn-primary" href="https://htmlhigh5.com" target="_blank">See for Yourself!</a>
+            <a class="btn btn-default" href="https://bitbucket.org/guadalcanal1/htmlhigh5/src/master/" target="_blank">Check the Source Code</a>
+        </div>
+        <div class="portfolioItem col-md-4">
+            <h3 class="title">
+                Finalweb 2.0
+            </h3>
+            <img src="/images/finalweb.png" alt="Finalweb 2.0" class="featuredImage">
+            <p class="description"></p>
+            <a class="btn btn-primary" href="https://finalweb.com" target="_blank">See for Yourself!</a>
+        </div>
+        <div class="portfolioItem col-md-4">
+            <h3 class="title">
+                Popsic.io
+            </h3>
+            <img src="/images/popsicio.png" alt="Popsic.io" class="featuredImage">
+            <p class="description"></p>
+            <a class="btn btn-primary" href="https://popsic.io" target="_blank">See for Yourself!</a>
+            <a class="btn btn-default" href="https://github.com/iandersen/popsic.io" target="_blank">Check the Source Code</a>
+        </div>
+        <div class="portfolioItem col-md-4">
+            <h3 class="title">
+                Drone Car
+            </h3>
+            <img src="" alt="Drone Car" class="featuredImage">
+            <p class="description"></p>
+            <a class="btn btn-default" href="https://github.com/iandersen/drone-car" target="_blank">Check the Source Code!</a>
+        </div>
     </section>
     <section id="contact" class="pageSection col-md-12">
         <h2 class="sectionTitle">Contact Me</h2>

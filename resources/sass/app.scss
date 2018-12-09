@@ -24,6 +24,45 @@
   clear: both;
 }
 
+#skillsCanvasContainer {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+  #skillsCanvas {
+    height: 600px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: inline-block;
+  }
+}
+
+#skillsListContainer {
+  display: inline-block;
+  vertical-align: top;
+  .skillCategory {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    .skillsSubTitle{
+      color: $pink;
+      font-weight: bold;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
+    .skillsList {
+      list-style-type: none;
+      padding-left: 0;
+      li{
+        margin-top: 30px;
+        font-size: 1.5em;
+        color: $darkBlue;
+      }
+    }
+  }
+}
+
 #jumbotron{
   height: 100%;
   width: 100%;
@@ -104,5 +143,63 @@
     padding: 20px;
     font-size: 1.35em;
     display: inline-block;
+  }
+}
+
+#portfolio{
+  background-color: $darkBlue;
+  color: $offWhite;
+  width: 100%;
+  margin: 0;
+  .sectionTitle{
+    width: 100%;
+  }
+  .portfolioItem{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 auto;
+    padding: 30px;
+    .featuredImage{
+      width: 100%;
+    }
+  }
+}
+
+#experienceList{
+  list-style: none;
+  border-collapse: collapse;
+  padding: 0;
+  .experienceItem{
+    margin: 15px;
+  }
+  .title, .duration, .expand{
+    border: 2px solid $offWhite;
+    font-size: 1.5em;
+    font-family: Nunito, sans-serif;
+    padding: 5px;
+    display: inline-block;
+  }
+  .title{
+    background: $offWhite;
+    color: $darkBlue;
+  }
+  .expand{
+    transition: 200ms;
+    border: 2px solid $yellow;
+    background: $yellow;
+    text-decoration: none;
+    text-align: center;
+    color: $pink;
+    font-weight: bold;
+  }
+  .expand:hover{
+    background: desaturate(darken($yellow, 15%), 25%);
+    border: 2px solid desaturate(darken($yellow, 15%), 25%);
+  }
+  .description{
+    padding: 25px;
+    font-size: 1.35em;
+    display: none;
+    transition: 500ms;
   }
 }

@@ -25,3 +25,11 @@ function getMomentFromText(text){
 $(document).ready(()=>{
     init();
 });
+
+$('.expand').on('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    const $clickedElement = $(event.target);
+    $clickedElement.text($clickedElement.text() === '+' ? '-' : '+');
+    $clickedElement.next().toggle();
+});
