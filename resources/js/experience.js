@@ -31,5 +31,5 @@ $('.expand').on('click', event => {
     event.stopPropagation();
     const $clickedElement = $(event.target);
     $clickedElement.text($clickedElement.text() === '+' ? '-' : '+');
-    $clickedElement.next().toggle();
+    $clickedElement.parent().next().toggle();
 });

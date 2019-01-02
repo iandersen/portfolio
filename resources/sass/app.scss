@@ -18,6 +18,14 @@
   color: lighten($yellow, 20%);
 }
 
+.navbar-fixed-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100000;
+}
+
 .clearfix:after {
   content: "";
   display: table;
@@ -38,27 +46,31 @@
   }
 }
 
-#skillsListContainer {
+#skills{
+  background-color: $lightBlue;
+  .sectionTitle{
+    color: $offWhite;
+  }
+}
+
+.skillCategory {
   display: inline-block;
   vertical-align: top;
-  .skillCategory {
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-    .skillsSubTitle{
-      color: $pink;
+  text-align: center;
+  .skillsSubTitle{
+    color: $pink;
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-top: 20px;
+  }
+  .skillsList {
+    list-style-type: none;
+    padding-left: 0;
+    li{
+      margin-top: 30px;
+      font-size: 1.8em;
       font-weight: bold;
-      font-size: 2.5em;
-      margin-top: 20px;
-    }
-    .skillsList {
-      list-style-type: none;
-      padding-left: 0;
-      li{
-        margin-top: 30px;
-        font-size: 1.5em;
-        color: $darkBlue;
-      }
+      color: $darkBlue;
     }
   }
 }
@@ -125,11 +137,15 @@
 
 .pageSection{
   border-bottom: 1px solid darken($offWhite, 10%);
+  max-width: 100%;
+  margin: 0;
+  padding-top: 55px;
   .sectionTitle{
     padding: 20px;
     color: $lightBlue;
     letter-spacing: .5em;
     font-size: 3em;
+    width: 100%;
   }
 }
 
@@ -162,6 +178,14 @@
     .featuredImage{
       width: 100%;
     }
+    .description{
+      margin: 10px;
+      font-size: 1.35em;
+      text-align: center;
+    }
+    .btn{
+      margin: 10px;
+    }
   }
 }
 
@@ -169,19 +193,28 @@
   list-style: none;
   border-collapse: collapse;
   padding: 0;
+  width:100%;
   .experienceItem{
-    margin: 15px;
+    margin: 15px 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
   }
   .title, .duration, .expand{
     border: 2px solid $offWhite;
     font-size: 1.5em;
     font-family: Nunito, sans-serif;
     padding: 5px;
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
   }
   .title{
     background: $offWhite;
     color: $darkBlue;
+    width: 50%;
+  }
+  .duration {
+    width: 40%;
   }
   .expand{
     transition: 200ms;
@@ -191,6 +224,7 @@
     text-align: center;
     color: $pink;
     font-weight: bold;
+    width: 10%;
   }
   .expand:hover{
     background: desaturate(darken($yellow, 15%), 25%);
@@ -201,5 +235,6 @@
     font-size: 1.35em;
     display: none;
     transition: 500ms;
+    width:100%;
   }
 }

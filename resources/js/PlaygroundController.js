@@ -7,7 +7,7 @@ class PlaygroundController{
 
         this.starSpeed = 2;
         this.stars = [];
-        this.numStars = 2001;
+        this.numStars = 2019;
         this.mouseX = 0;
         this.mouseY = 0;
 
@@ -49,10 +49,12 @@ class PlaygroundController{
     update() {
         this.updateSize();
         for (let i = 0; i < this.numStars; i++) {
-            if (this.stars[i].isOutOfBounds(this.width, this.height) || this.stars[i].lifetime > 600) {
-                this.stars[i] = this.createStar();
+            if(this.stars[i]) {
+                if (this.stars[i].isOutOfBounds(this.width, this.height) || this.stars[i].lifetime > 600) {
+                    this.stars[i] = this.createStar();
+                }
+                this.stars[i].animate(this.mode, this.mouseX, this.mouseY, Math.max(this.width, this.height));
             }
-            this.stars[i].animate(this.mode, this.mouseX, this.mouseY, this.width);
         }
     }
 
@@ -71,6 +73,7 @@ class PlaygroundController{
         this.c.height = this.c.parentNode.clientHeight;
         this.width = this.c.width;
         this.height = this.c.height;
+        this.numStars =(this.width*this.height) / 1027;
     }
 
     createStar() {
