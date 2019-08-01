@@ -1,0 +1,26 @@
+#portfolioSection{
+    background-color: $darkGray;
+    color: $offWhite;
+    width: 100%;
+    margin: 0;
+    .sectionTitle{
+        width: 100%;
+    }
+    .portfolioItem{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 auto;
+        padding: 30px;
+        .featuredImage{
+            width: 100%;
+        }
+        .description{
+            margin: 10px;
+            font-size: 1.35em;
+            text-align: center;
+        }
+        .btn{
+            margin: 10px;
+        }
+    }
+}

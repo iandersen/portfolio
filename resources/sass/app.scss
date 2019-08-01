@@ -14,6 +14,19 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+@import 'about';
+@import 'experience';
+@import 'jumbotron';
+@import 'skills';
+@import 'portfolio';
+
+.anchor{
+    top: -110px;
+    display: block;
+    position: relative;
+    visibility: hidden;
+}
+
 .emphasis-light{
   color: lighten($yellow, 20%);
 }
@@ -32,209 +45,15 @@
   clear: both;
 }
 
-#skillsCanvasContainer {
-  width: 100%;
-  text-align: right;
-  display: inline-block;
-  #skillsCanvas {
-    height: 600px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    display: inline-block;
-  }
-}
-
-#skills{
-  background-color: $lightBlue;
-  .sectionTitle{
-    color: $offWhite;
-  }
-}
-
-.skillCategory {
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  .skillsSubTitle{
-    color: $pink;
-    font-weight: bold;
-    font-size: 2.5em;
-    margin-top: 20px;
-  }
-  .skillsList {
-    list-style-type: none;
-    padding-left: 0;
-    li{
-      margin-top: 30px;
-      font-size: 1.8em;
-      font-weight: bold;
-      color: $darkBlue;
-    }
-  }
-}
-
-#jumbotron{
-  height: 100%;
-  width: 100%;
-  color: $offWhite;
-  text-align: center;
-  #jumbotronCanvas{
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    z-index: -1;
-  }
-  #centerContent{
-    transform: translateY(-25%);
-    margin-top: 40vh;
-    pointer-events: none;
-    padding: 25px;
-    width: 100%;
-    position: absolute;
-    h1{
-      font-size: 4em;
-    }
-    h2{
-      font-size: 2.5em;
-    }
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(20px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-
-  #scrollDown{
-    width: 100%;
-    position: absolute;
-    bottom: 20px;
-    font-size: 2em;
-    #scrollDownCaret{
-      font-size: 4em;
-    }
-    a{
-      color: $offWhite;
-      transition: 300ms;
-      text-decoration: none;
-    }
-    a:hover{
-      color: $lightBlue;
-      display: inline-block;
-      animation: float 2s ease-in-out infinite;
-    }
-  }
-}
-
 .pageSection{
-  border-bottom: 1px solid darken($offWhite, 10%);
+  border-bottom: 1px solid $darkGray;
   max-width: 100%;
   margin: 0;
-  padding-top: 55px;
   .sectionTitle{
-    padding: 20px;
-    color: $lightBlue;
+    padding: 10px;
+    color: $lightGray;
     letter-spacing: .5em;
     font-size: 3em;
     width: 100%;
-  }
-}
-
-#about{
-  background-color: $darkBlue;
-  color: $offWhite;
-  #bioImage{
-
-  }
-  #bioText{
-    padding: 20px;
-    font-size: 1.35em;
-    display: inline-block;
-  }
-}
-
-#portfolio{
-  background-color: $darkBlue;
-  color: $offWhite;
-  width: 100%;
-  margin: 0;
-  .sectionTitle{
-    width: 100%;
-  }
-  .portfolioItem{
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 auto;
-    padding: 30px;
-    .featuredImage{
-      width: 100%;
-    }
-    .description{
-      margin: 10px;
-      font-size: 1.35em;
-      text-align: center;
-    }
-    .btn{
-      margin: 10px;
-    }
-  }
-}
-
-#experienceList{
-  list-style: none;
-  border-collapse: collapse;
-  padding: 0;
-  width:100%;
-  .experienceItem{
-    margin: 15px 0;
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-  }
-  .title, .duration, .expand{
-    border: 2px solid $offWhite;
-    font-size: 1.5em;
-    font-family: Nunito, sans-serif;
-    padding: 5px;
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .title{
-    background: $offWhite;
-    color: $darkBlue;
-    width: 50%;
-  }
-  .duration {
-    width: 40%;
-  }
-  .expand{
-    transition: 200ms;
-    border: 2px solid $yellow;
-    background: $yellow;
-    text-decoration: none;
-    text-align: center;
-    color: $pink;
-    font-weight: bold;
-    width: 10%;
-  }
-  .expand:hover{
-    background: desaturate(darken($yellow, 15%), 25%);
-    border: 2px solid desaturate(darken($yellow, 15%), 25%);
-  }
-  .description{
-    padding: 25px;
-    font-size: 1.35em;
-    display: none;
-    transition: 500ms;
-    width:100%;
   }
 }

@@ -1,0 +1,42 @@
+#skillsCanvasContainer {
+    width: 100%;
+    text-align: right;
+    display: inline-block;
+    #skillsCanvas {
+        height: 600px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: inline-block;
+    }
+}
+
+#skillsSection{
+    background-color: $lightGray;
+    .sectionTitle{
+        color: $offWhite;
+    }
+}
+
+.skillCategory {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    .skillsSubTitle{
+        color: $pink;
+        font-weight: bold;
+        font-size: 2.5em;
+        margin-top: 20px;
+    }
+    .skillsList {
+        list-style-type: none;
+        padding-left: 0;
+        li{
+            margin-top: 30px;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: $darkGray;
+        }
+    }
+}

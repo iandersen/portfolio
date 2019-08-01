@@ -1,0 +1,49 @@
+#experienceList{
+    list-style: none;
+    border-collapse: collapse;
+    padding: 0;
+    width:100%;
+    .experienceItem{
+        margin: 15px 0;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+    .title, .duration, .expand{
+        border: 2px solid $offWhite;
+        font-size: 1.5em;
+        font-family: Nunito, sans-serif;
+        padding: 5px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .title{
+        background: $offWhite;
+        color: $darkGray;
+        width: 50%;
+    }
+    .duration {
+        width: 40%;
+    }
+    .expand{
+        transition: 200ms;
+        border: 2px solid $yellow;
+        background: $yellow;
+        text-decoration: none;
+        text-align: center;
+        color: $darkGray;
+        font-weight: bold;
+        width: 10%;
+    }
+    .expand:hover{
+        background: desaturate(darken($yellow, 15%), 25%);
+        border: 2px solid desaturate(darken($yellow, 15%), 25%);
+    }
+    .description{
+        padding: 25px;
+        font-size: 1.35em;
+        display: none;
+        transition: 500ms;
+        width:100%;
+    }
+}

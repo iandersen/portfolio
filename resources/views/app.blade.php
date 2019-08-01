@@ -7,6 +7,7 @@
     <meta name="copyright" content="Ian Andersen"/>
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
 <section id="jumbotron">
@@ -37,13 +38,13 @@
         </div>
     </div>
 </nav>
-<section id="about" class="pageSection col-md-12">
+<section id="aboutSection" class="pageSection col-md-12">
     <h2 class="sectionTitle">About Me</h2>
-    {{--<img id="bioImage" class="offset-md-1 col-md-2" src="http://ianstuff.com/img/gallery_photos/thumbnail/IMG_2760.jpg"/>--}}
+    <div class="anchor" id="about"></div>
     <p id="bioText" class="offset-md-4 col-md-8">I began programming in 2012, making games for my own enjoyment, then
         began learning Java.
         In 2015 I wrote my first full stack application, and in 2016 I began working part time as a web developer,
-        learning new technologies along the way. I am hardworking, a quick learner, and I enjoy working with people
+        learning new technologies along the way. I am a hardworking quick learner, who enjoys working with people
         as well as code.
     </p>
     <h3>Experience</h3>
@@ -95,8 +96,9 @@
             arranged meetings, competed in two ACM competitions, and planned events.</p>
     </ul>
 </section>
-<section id="skills" class="pageSection row clearfix">
+<section id="skillsSection" class="pageSection row clearfix">
     <h2 class="sectionTitle">Skills</h2>
+    <div class="anchor" id="skills"></div>
     <div class="col-md-4 skillCategory">
         <h3 class="skillsSubTitle">
             Server Side
@@ -133,7 +135,8 @@
         </ul>
     </div>
 </section>
-<section id="portfolio" class="pageSection row">
+<section id="portfolioSection" class="pageSection row">
+    <div class="anchor" id="portfolio"></div>
     <h2 class="sectionTitle">Portfolio</h2>
     <div class="portfolioItem col-md-4">
         <h3 class="title">
@@ -159,7 +162,7 @@
         </h3>
         <img src="/images/popsicio.png" alt="Popsic.io" class="featuredImage">
         <p class="description">A multiplayer IO game running on NodeJS</p>
-        <a class="btn btn-primary" href="https://popsic.io" target="_blank">See for Yourself!</a>
+        <a class="btn btn-primary" href="https://popsicio.htmlhigh5.com" target="_blank">See for Yourself!</a>
         <a class="btn btn-secondary" href="https://github.com/iandersen/popsic.io" target="_blank">Check out the Source
             Code</a>
     </div>
@@ -173,8 +176,9 @@
             Code!</a>
     </div>
 </section>
-<section id="contact" class="pageSection col-md-12">
+<section id="contactSection" class="pageSection col-md-12">
     <h2 class="sectionTitle">Contact Me</h2>
+    <div class="anchor" id="contact"></div>
 </section>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
