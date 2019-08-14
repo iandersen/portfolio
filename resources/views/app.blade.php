@@ -99,7 +99,7 @@
 <section id="skillsSection" class="pageSection row clearfix">
     <h2 class="sectionTitle">Skills</h2>
     <div class="anchor" id="skills"></div>
-    <div class="col-md-4 skillCategory">
+    <div class="col-md-12 skillCategory">
         <h3 class="skillsSubTitle">
             Server Side
         </h3>
@@ -110,7 +110,7 @@
             <li>MySQL</li>
         </ul>
     </div>
-    <div class="col-md-4 skillCategory">
+    <div class="col-md-12 skillCategory">
         <h3 class="skillsSubTitle">
             Front-End
         </h3>
@@ -123,7 +123,7 @@
             <li>Bootstrap</li>
         </ul>
     </div>
-    <div class="col-md-4 skillCategory">
+    <div class="col-md-12 skillCategory">
         <h3 class="skillsSubTitle">
             Workplace
         </h3>
@@ -175,11 +175,20 @@
         <a class="btn btn-secondary" href="https://github.com/iandersen/drone-car" target="_blank">Check out the Source
             Code!</a>
     </div>
+    <div class="portfolioItem col-md-4">
+        <h3 class="title">
+            This Website
+        </h3>
+        <img src="/images/portfolio.jpg" alt="Portfolio Website" class="featuredImage">
+        <p class="description">What you're looking at right now</p>
+        <a class="btn btn-secondary" href="https://github.com/iandersen/portfolio" target="_blank">Check out the Source
+            Code!</a>
+    </div>
 </section>
-<section id="contactSection" class="pageSection col-md-12">
-    <h2 class="sectionTitle">Contact Me</h2>
-    <div class="anchor" id="contact"></div>
-</section>
+{{--<section id="contactSection" class="pageSection col-md-12">--}}
+{{--    <h2 class="sectionTitle">Contact Me</h2>--}}
+{{--    <div class="anchor" id="contact"></div>--}}
+{{--</section>--}}
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

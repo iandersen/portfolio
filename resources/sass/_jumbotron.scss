@@ -17,11 +17,27 @@
         padding: 25px;
         width: 100%;
         position: absolute;
-        h1{
-            font-size: 4em;
+        h1 {
+            font-size: 2em;
         }
-        h2{
-            font-size: 2.5em;
+        h2 {
+            font-size: 1.25em;
+        }
+        @media(min-width: 680px) {
+            h1 {
+                font-size: 3em;
+            }
+            h2 {
+                font-size: 1.75em;
+            }
+        }
+        @media(min-width: 1260px) {
+            h1 {
+                font-size: 4em;
+            }
+            h2 {
+                font-size: 2.5em;
+            }
         }
     }
 
@@ -54,6 +70,11 @@
             color: $lightGray;
             display: inline-block;
             animation: float 2s ease-in-out infinite;
+        }
+    }
+    @media (max-width: 460px), (max-height: 700px){
+        #scrollDown{
+            display: none
         }
     }
 }

@@ -19,6 +19,7 @@
 @import 'jumbotron';
 @import 'skills';
 @import 'portfolio';
+@import 'contact';
 
 .anchor{
     top: -110px;
@@ -56,4 +57,8 @@
     font-size: 3em;
     width: 100%;
   }
+}
+
+body{
+    overflow-x: hidden;
 }

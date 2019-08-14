@@ -14886,10 +14886,21 @@ readers do not read off random characters that represent icons */
   display: inline-block;
 }
 
+@media (min-width: 1200px) {
+  #experienceList {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1199px) {
+  #experienceList {
+    padding: 0;
+  }
+}
+
 #experienceList {
   list-style: none;
   border-collapse: collapse;
-  padding: 0;
   width: 100%;
 }
 
@@ -14971,11 +14982,31 @@ readers do not read off random characters that represent icons */
 }
 
 #jumbotron #centerContent h1 {
-  font-size: 4em;
+  font-size: 2em;
 }
 
 #jumbotron #centerContent h2 {
-  font-size: 2.5em;
+  font-size: 1.25em;
+}
+
+@media (min-width: 680px) {
+  #jumbotron #centerContent h1 {
+    font-size: 3em;
+  }
+
+  #jumbotron #centerContent h2 {
+    font-size: 1.75em;
+  }
+}
+
+@media (min-width: 1260px) {
+  #jumbotron #centerContent h1 {
+    font-size: 4em;
+  }
+
+  #jumbotron #centerContent h2 {
+    font-size: 2.5em;
+  }
 }
 
 @-webkit-keyframes float {
@@ -15036,6 +15067,12 @@ readers do not read off random characters that represent icons */
           animation: float 2s ease-in-out infinite;
 }
 
+@media (max-width: 460px), (max-height: 700px) {
+  #jumbotron #scrollDown {
+    display: none;
+  }
+}
+
 #skillsCanvasContainer {
   width: 100%;
   text-align: right;
@@ -15062,7 +15099,7 @@ readers do not read off random characters that represent icons */
 .skillCategory {
   display: inline-block;
   vertical-align: top;
-  text-align: center;
+  text-align: left;
 }
 
 .skillCategory .skillsSubTitle {
@@ -15070,6 +15107,7 @@ readers do not read off random characters that represent icons */
   font-weight: bold;
   font-size: 2.5em;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .skillCategory .skillsList {
@@ -15078,10 +15116,17 @@ readers do not read off random characters that represent icons */
 }
 
 .skillCategory .skillsList li {
-  margin-top: 30px;
+  margin: 10px;
   font-size: 1.8em;
   font-weight: bold;
   color: #242626;
+  float: left;
+}
+
+@media (min-width: 480px) {
+  .skillCategory .skillsList li:first-of-type {
+    margin-left: 30px;
+  }
 }
 
 #portfolioSection {
@@ -15153,5 +15198,9 @@ readers do not read off random characters that represent icons */
   letter-spacing: 0.5em;
   font-size: 3em;
   width: 100%;
+}
+
+body {
+  overflow-x: hidden;
 }
 

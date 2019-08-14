@@ -1,7 +1,17 @@
+@media(min-width: 1200px){
+    #experienceList{
+        padding: 0 50px;
+    }
+}
+@media(max-width: 1199px){
+    #experienceList{
+        padding: 0;
+    }
+}
+
 #experienceList{
     list-style: none;
     border-collapse: collapse;
-    padding: 0;
     width:100%;
     .experienceItem{
         margin: 15px 0;
